@@ -6,16 +6,15 @@ import random
 
 
 def ask_values():
-    A = int(input("Dígame el ancho del gráfico: "))
-    B = int(input("Dígame el alto del gráfico: "))
     a = int(input("Dígame a: "))
     b = int(input("Dígame b: "))
     delta = float(input("Dígame delta mayor que 0 y menor o igual que 2: "))
     delta = 3.14/delta
     t = int(input("Dígame t: "))
-    return A, B, a, b, delta, t
+    return a, b, delta, t
 
-def draw_line(A, B, a, b, delta, t):
+def draw_line(a, b, delta, t):
+    turtle.tracer(False)
     window = turtle.Screen()
     window.bgcolor("#006b9b")
     myPen = turtle.Turtle()
@@ -29,8 +28,8 @@ def draw_line(A, B, a, b, delta, t):
     for i in range(0,1000):
         t+=0.01
         #Apply Lissajous Parametric Equations
-        x = A * sin(a*t + delta) 
-        y = B * sin(b*t) 
+        x = 100 * sin(a*t + delta) 
+        y = 100 * sin(b*t) 
 
         if i % 5 == 0:
             myPen.color(random.choice(colours))
@@ -38,10 +37,10 @@ def draw_line(A, B, a, b, delta, t):
         myPen.goto(x,y)
         myPen.pendown()
         myPen.getscreen().update() 
-    sleep(0.5)
+    turtle.done()
 
 
 if __name__ == '__main__':
-    A, B, a, b, delta, t = ask_values()
-    draw_line(A, B, a, b, delta, t)
+    a, b, delta, t = ask_values()
+    draw_line(a, b, delta, t)
 
