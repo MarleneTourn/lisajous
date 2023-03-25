@@ -1,8 +1,6 @@
 # Python Turtle - Lissajous Curve - www.101computing.net/python-turtle-lissajous-curve/
 import turtle
 from math import cos, sin
-from time import sleep
-import random
 
 
 def ask_values():
@@ -20,7 +18,7 @@ def draw_line(a, b, delta, t):
     window.bgcolor("#006b9b")
     myPen = turtle.Turtle()
     myPen.hideturtle()
-    myPen.speed(5)
+    # myPen.speed(5)
     myPen.pensize(2)
     myPen.color("#AA00AA")
     myPen.color("#53e2f3")
