@@ -8,12 +8,12 @@ A = int(input("Dígame el ancho del gráfico: "))
 B = int(input("Dígame el alto del gráfico: "))
 a = int(input("Dígame a: "))
 b = int(input("Dígame b: "))
-delta = float(input("Dígame delta entre 0 y 2: "))
+delta = float(input("Dígame delta mayor que 0 y menor o igual que 2: "))
 delta = 3.14/delta
 t = int(input("Dígame t: "))
 
 window = turtle.Screen()
-window.bgcolor("#FFFFFF")
+window.bgcolor("#006b9b")
 
 myPen = turtle.Turtle()
 myPen.hideturtle()
@@ -39,7 +39,8 @@ for i in range(0,1000):
     x = A * sin(a*t + delta) 
     y = B * sin(b*t) 
 
-    myPen.color(random.choice(colours))
+    if i % 5 == 0:
+        myPen.color(random.choice(colours))
 
     myPen.goto(x,y)
     myPen.pendown()
