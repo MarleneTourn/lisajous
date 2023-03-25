@@ -1,11 +1,6 @@
 # Python Turtle - Lissajous Curve - www.101computing.net/python-turtle-lissajous-curve/
 import turtle
 from math import cos, sin
-<<<<<<< HEAD
-from time import sleep
-import random
-=======
->>>>>>> 330794b1bf7d7485bf4a0048770cf6844ab1cc01
 
 
 def ask_values():
