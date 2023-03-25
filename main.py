@@ -4,6 +4,14 @@ from math import cos,sin
 from time import sleep
 import random
 
+A = int(input("Dígame el ancho del gráfico: "))
+B = int(input("Dígame el alto del gráfico: "))
+a = int(input("Dígame a: "))
+b = int(input("Dígame b: "))
+delta = float(input("Dígame delta entre 0 y 2: "))
+delta = 3.14/delta
+t = int(input("Dígame t: "))
+
 window = turtle.Screen()
 window.bgcolor("#FFFFFF")
 
@@ -16,12 +24,12 @@ myPen.color("#AA00AA")
 
 myPen.penup()
 
-A = 100
-B = 100
-a = 3 
-b = 4
-delta = 3.14/2
-t=0
+# A = 100
+# B = 100
+# a = 3 
+# b = 4
+# delta = 3.14/2
+# t=0
 
 colours = ['#b24a68', '#FAEBD7', '#F0FFFF', '#6495ED', '#008B8B', '#483D8B', '#20B2AA', '#9cb24a', '#abef57']
 
