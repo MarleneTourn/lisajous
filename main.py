@@ -8,7 +8,7 @@ import random
 def ask_values():
     a = int(input("Dígame a: "))
     b = int(input("Dígame b: "))
-    delta = float(input("Dígame delta mayor que 0 y menor o igual que 2: "))
+    delta = float(input("Dígame delta mayor que 0: "))
     delta = 3.14/delta
     t = int(input("Dígame t: "))
     return a, b, delta, t
@@ -22,21 +22,23 @@ def draw_line(a, b, delta, t):
     myPen.speed(10)
     myPen.pensize(2)
     myPen.color("#AA00AA")
-    myPen.penup()
     colours = ['#b24a68', '#FAEBD7', '#F0FFFF', '#6495ED', '#008B8B', '#483D8B', '#20B2AA', '#9cb24a', '#abef57']
 
-    for i in range(0,1000):
-        t+=0.01
-        #Apply Lissajous Parametric Equations
-        x = 100 * sin(a*t + delta) 
-        y = 100 * sin(b*t) 
+    while delta < 10:
+        myPen.penup()
+        delta = delta + 0.1
+        for i in range(0,1000):
+            t+=0.01
+            #Apply Lissajous Parametric Equations
+            x = 100 * sin(a*t + delta) 
+            y = 100 * sin(b*t) 
 
-        if i % 5 == 0:
-            myPen.color(random.choice(colours))
+            if i % 5 == 0:
+                myPen.color(random.choice(colours))
 
-        myPen.goto(x,y)
-        myPen.pendown()
-        myPen.getscreen().update() 
+            myPen.goto(x,y)
+            myPen.pendown()
+            myPen.getscreen().update() 
     turtle.done()
 
 
